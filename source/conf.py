@@ -31,7 +31,10 @@ source_suffix = {
 html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 
+html_css_files = ["custom.css"]
+
 html_title = "vferat"
+html_favicon = "_static/mylogo.fav"
 
 html_theme_options = {
   "github_url": "https://github.com/vferat/",
@@ -49,3 +52,15 @@ html_theme_options = {
         ],
   "search_bar_text": "Search this site...",
 }
+
+html_sidebars = {'index': ['sidebar.html'],
+                 'about': ['sidebar.html'],
+                 'blog': ['tagcloud.html', 'archives.html'],
+                 'blog/**': ['tagcloud.html', 'archives.html'],
+                 'blog/**/**': ['tagcloud.html', 'archives.html']}
+
+## Blog
+extensions += ['ablog']
+blog_title = "Mon Blog"
+blog_path = "blog"
+blog_post_pattern = "posts/*/*"
